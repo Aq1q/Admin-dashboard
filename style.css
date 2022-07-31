@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+header {
+    background-color: pink;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+nav {
+    background-color: lightblue;
+    grid-row: 1/-1;
+}
+
+main {
+    background-color: blue;
+}
