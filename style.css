@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
 }
 
 html {
@@ -22,8 +23,99 @@ a {
 header {
     grid-area: 1 / 2 / 2 / 3;
     z-index: 1;
-    box-shadow: 0 4px 2px gray;
+    box-shadow: 1px 1px 10px gray;
     background-color: white;
+    padding: 5px 6% 0 30px;
+
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    align-items: center;
+}
+
+.header-top {
+    display: grid;
+    grid-template-columns: 15fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-top a {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header-top a:hover {
+    transform: scale(1.2);
+}
+
+.header-top .profile-picture {
+    width: 40px;
+    height: 40px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+.search-bar input[type="search"] {
+    width: 80%;
+    min-width: 20px;
+    height: 25px;
+    border: none;
+    border-radius: 15px;
+    background-color: lightgray;
+}
+
+.header-bot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    align-items: center;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 50px 200px;
+    grid-template-rows: 20px 30px;
+}
+
+.profile .profile-picture {
+    align-self: stretch;
+    grid-area: 1 / 1 / -1 / 2; 
+}
+
+.profile .welcome-msg {
+    font-size: 0.6rem;
+    align-self: end;
+}
+
+.profile .username {
+    grid-column: 2 / 3;
+    align-self: start;
+    font-size: 1rem;
+}
+
+.buttons {
+    justify-self: end;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    background-color: #3C9FF5;
+}
+.btn:active {
+    border: 1px solid black;
+    transform: scale(1.2);
 }
 
 nav {
@@ -72,6 +164,42 @@ nav a:hover {
 }
 
 main {
-
     background-color: lightgray;
+}
+
+@media only screen and (max-width: 900px) {
+        body {
+            grid-template-columns: 175px 1fr;
+        }
+        header {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .header-bot .profile {
+            width: 100px;
+        }
+        .header-bot .welcome-msg {
+            font-size: 0.5rem;
+        }
+        .header-bot .username {
+            font-size: 0.8rem;
+        }
+        .btn {
+            width: 60px;
+            height: 30px;
+        }
+        nav .logo img {
+            width: 25px;
+            height: 25px;
+        }
+        nav .logo p{
+            font-size: 1.2rem
+        }
+        nav li{
+            font-size: 1rem;
+        }
+        .nav-picture {
+            width: 20px;
+            height: 20px;
+        }
 }
